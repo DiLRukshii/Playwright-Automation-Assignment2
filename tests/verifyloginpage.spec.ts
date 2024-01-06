@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { TIMEOUT } from 'dns';
 
 
-test.only('verify the search funtionality of wiley online library', async ({ page }) => {
+test('verify the search funtionality of wiley online library', async ({ page }) => {
   // Navigate to the home page
   await page.goto('https://onlinelibrary.wiley.com/');
 
@@ -20,7 +20,7 @@ test.only('verify the search funtionality of wiley online library', async ({ pag
 
   //Error message is displayed
   const errorMessage = await page.textContent('//div[@id="login-error-message"]');
-  console.log(`Your email or password is incorrect. Please try again: ${errorMessage}`);
+  console.log('Your email or password is incorrect. Please try again: ${errorMessage}');
 
 
 });
